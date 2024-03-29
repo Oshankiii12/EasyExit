@@ -33,8 +33,8 @@ const RequestPass = () => {
       };
       // console.log(JSON.stringify(formData))
       const response = await axios.post('https://easyexit-backend.onrender.com/student', formData, {headers});
-      console.log('Form submitted successfully');
-      console.log(response)
+      alert("Request Sent Successfully!!")
+      window.location.reload();
     } catch (error) {
       console.error('Error submitting form:', error);
     }

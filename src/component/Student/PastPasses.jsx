@@ -12,7 +12,7 @@ const PastPasses = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('https://easyexit-backend.onrender.com/student/history',{headers});
+        const data = await axios.get('http://localhost:5000/student/history',{headers});
         setPastPasses(data.data.data);
       } catch (error) {
         console.error('Error fetching accepted passes:', error);
@@ -38,21 +38,24 @@ const PastPasses = () => {
         
         
           {pastPasses.map((pass, index) => (
+            
             <tr key={index} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
               <td>{pass.where}</td>
               <td>{pass.date}</td>
               <td>{pass.outtime}</td>
               <td>
                 {pass.isAccepted? (
-                  <span className="status-icon">&#10004; Accepted</span>
+                  <><span className="status-icon">&#10004;</span> Accepted</>
                 ) : pass.rejectReason ? (
-                  <span className="status-icon">&#10060; Rejected</span>
+                  <><span className="status-icon">&#10060;</span> Rejected <br /> {pass.rejectReason}</>
                 ) : (
-                  <span className="status-icon">Pending</span>
+                  <span>&#x231b; Pending</span>
                 )}
               </td>
+              
             </tr>
           ))}
+          
         </tbody>
       </table>
     </div>
