@@ -28,6 +28,10 @@ const OTPverify = () => {
       //   throw new Error('Failed to find outpass');
       // }
       // console.log('Outpass found!!');
+      if(!data.data.data){
+        alert("Invalid OTP!!");
+        window.location.reload();
+      }
       localStorage.setItem("pass", JSON.stringify(data.data.data));
       navigate('/guard/accept');
       // Optionally, you can reset the form fields here
