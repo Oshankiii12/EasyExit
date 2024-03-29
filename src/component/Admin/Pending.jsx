@@ -68,7 +68,7 @@ const PendingPassesSlider = () => {
         };
         const data = await axios.post('https://easyexit-backend.onrender.com/admin',body,{headers});
         
-    // window.location.reload();
+    window.location.reload();
       } catch (error) {
         console.error('Error rejecting pass:', error);
       }
