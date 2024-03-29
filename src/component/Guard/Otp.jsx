@@ -32,8 +32,10 @@ const OTPverify = () => {
         alert("Invalid OTP!!");
         window.location.reload();
       }
-      localStorage.setItem("pass", JSON.stringify(data.data.data));
+      else{
+        localStorage.setItem("pass", JSON.stringify(data.data.data));
       navigate('/guard/accept');
+      }
       // Optionally, you can reset the form fields here
       setOTP();
     } catch (error) {
