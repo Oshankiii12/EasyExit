@@ -23,9 +23,10 @@ const Status = () => {
 
     fetchPastPasses()
   }, []); // Empty dependency array to ensure the effect runs only once
-
+  if(!isEmpt) return (<div>
+  No outpass requested
+</div>)
   return (
-    {isEmpt?
       <div className="status-container">
         <div className="detail1">
             <span className="label">Name:</span>
@@ -82,15 +83,8 @@ const Status = () => {
                 Pending
               </button>
           )}
-            
-        }
       </div>
-    :
-    <div>
-      No outpass requested
-    </div>
-    }
-  );
+      );
 };
 
 export default Status;
