@@ -64,7 +64,7 @@ const Status = () => {
           </div>
         </div>
         {
-          pass?{
+          pass.isAccepted?{
           pass.isAccepted === true?
             <button className="status-button status-accepted"> 
               Approved
