@@ -32,15 +32,15 @@ const Status = () => {
           
           <div className="detail">
             <span className="label">Enrollment No.:</span>
-            <span className="value">{pass.roll?pass.roll}</span>
+            <span className="value">{pass.roll?pass.roll:""}</span>
           </div>
           <div className="detail">
             <span className="label">Proceeding to:</span>
-            <span className="value">{pass.where?pass.where}</span>
+            <span className="value">{pass.where?pass.where:""}</span>
           </div>
           <div className="detail">
             <span className="label">Current Semester</span>
-            <span className="value">{pass.sem?pass.sem}</span>
+            <span className="value">{pass.sem?pass.sem:""}</span>
           </div>
           <div className="detail">
             <span className="label">Transport</span>
@@ -48,15 +48,15 @@ const Status = () => {
           </div>
           <div className="detail">
             <span className="label">Purpose</span>
-            <span className="value">{pass.purpose?pass.purpose}</span>
+            <span className="value">{pass.purpose?pass.purpose:""}</span>
           </div>
           <div className="detail">
             <span className="label">Time</span>
-            <span className="value">{pass.outtime?pass.outtime}</span>
+            <span className="value">{pass.outtime?pass.outtime:""}</span>
           </div>
           <div className="detail">
             <span className="label">Date</span>
-            <span className="value">{pass.date?pass.date}</span>
+            <span className="value">{pass.date?pass.date:""}</span>
           </div>
           <div className="detail">
             <span className="label">Own Responsibility</span>
