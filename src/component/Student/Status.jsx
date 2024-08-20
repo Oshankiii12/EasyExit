@@ -26,44 +26,45 @@ const Status = () => {
       <div className="status-container">
         <div className="detail1">
             <span className="label">Name:</span>
-            <span className="value">{pass.name}</span>
+            <span className="value">{pass.name?pass.name:""}</span>
           </div>
         <div className="status-details">
           
           <div className="detail">
             <span className="label">Enrollment No.:</span>
-            <span className="value">{pass.roll}</span>
+            <span className="value">{pass.roll?pass.roll}</span>
           </div>
           <div className="detail">
             <span className="label">Proceeding to:</span>
-            <span className="value">{pass.where}</span>
+            <span className="value">{pass.where?pass.where}</span>
           </div>
           <div className="detail">
             <span className="label">Current Semester</span>
-            <span className="value">{pass.sem}</span>
+            <span className="value">{pass.sem?pass.sem}</span>
           </div>
           <div className="detail">
             <span className="label">Transport</span>
-            <span className="value">{pass.transport}</span>
+            <span className="value">{pass.transport?pass.transport:""}</span>
           </div>
           <div className="detail">
             <span className="label">Purpose</span>
-            <span className="value">{pass.purpose}</span>
+            <span className="value">{pass.purpose?pass.purpose}</span>
           </div>
           <div className="detail">
             <span className="label">Time</span>
-            <span className="value">{pass.outtime}</span>
+            <span className="value">{pass.outtime?pass.outtime}</span>
           </div>
           <div className="detail">
             <span className="label">Date</span>
-            <span className="value">{pass.date}</span>
+            <span className="value">{pass.date?pass.date}</span>
           </div>
           <div className="detail">
             <span className="label">Own Responsibility</span>
-            <span className="value">{pass.ownResponsibility?"true":"false"}</span>
+            <span className="value">{pass?(pass.ownResponsibility?"true":"false"):""}</span>
           </div>
         </div>
         {
+          pass?{
           pass.isAccepted === true?
             <button className="status-button status-accepted"> 
               Approved
@@ -78,7 +79,11 @@ const Status = () => {
               <button className="status-button status-pending">
                 Pending
               </button>
-          )
+          )}:
+            <button className="status-button status-accepted"> 
+              None
+            </button> 
+            
         }
       </div>
   );
