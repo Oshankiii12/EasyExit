@@ -23,7 +23,7 @@ const Status = () => {
 
     fetchPastPasses()
   }, []); // Empty dependency array to ensure the effect runs only once
-  if(!isEmpt) return (<div>
+  if(isEmpt) return (<div>
   No outpass requested
 </div>)
   return (
@@ -88,3 +88,4 @@ const Status = () => {
 };
 
 export default Status;
+
