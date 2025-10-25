@@ -36,7 +36,7 @@ const Status = () => {
           
           <div className="detail">
             <span className="label">Enrollment No.:</span>
-            <span className="value">{pass.role}</span>
+            <span className="value">{pass.roll}</span>
           </div>
           <div className="detail">
             <span className="label">Proceeding to:</span>
@@ -88,4 +88,5 @@ const Status = () => {
 };
 
 export default Status;
+
 
